@@ -19,3 +19,16 @@ const numMap = {};
 
   return [];
 };
+
+var twoSum = function(nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    const rest = target - nums[i];
+    for (let n = (i + 1); n < nums.length; n++) {
+        const isPaired = nums[n] === rest
+        if (isPaired){
+            return [i,n];
+        }
+    }
+  }
+     return false;
+  };
